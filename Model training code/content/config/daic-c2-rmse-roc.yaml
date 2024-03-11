@@ -1,0 +1,33 @@
+seed: 103
+
+corpora: daic_woz
+data_path: ./content/data/daic-woz-1/
+
+processor_name_or_path: facebook/wav2vec2-base
+pooling_mode: mean
+return_attention_mask: False
+freeze_feature_extractor: True
+
+
+# Training Arguments
+output_dir: ./content/models/daic-woz/d2-c2-rmse-roc-mean10-frozen
+num_train_epochs: 10
+per_device_train_batch_size: 4 # 试试改为4
+per_device_eval_batch_size: 4  # 试试改为4
+gradient_accumulation_steps: 2
+evaluation_strategy: steps
+fp16: True
+save_steps: 10
+eval_steps: 10
+logging_steps: 10
+learning_rate: 1e-5
+save_total_limit: 2
+
+
+cache_dir: ./content/cache
+checkpoint: /checkpoint-4910  # 2940 4910 9820
+resume_from_checkpoint: True
+
+# Optional: if planning to test the model on a different dataset
+test_corpora: null
+test_corpora_path: null

@@ -1,0 +1,50 @@
+# Depression Recognition
+
+You can perform the following steps:
+
+#### 1. Prepare data  ####
+for example:
+python3 prepare_data.py --config content/config/daic-c2-rmse-roc.yaml
+
+
+#### 2. Preprocess data  ####
+for example:
+python3 preprocess_data.py --config content/config/daic-c2-rmse-roc.yaml
+
+#### 3. Train  ####
+for example:
+python3 train.py --config content/config/daic-c2-rmse-roc.yaml
+
+#### 4. Evaluate  ####
+for example:
+python3 evaluate.py --config content/config/daic-c2-rmse-roc.yaml
+
+#### Requirement: ####
+scikit-learn	1.0.2
+numba	0.48.0
+librosa	0.7.2
+torch	1.12.1+cu116
+transformers	4.18.0
+
+
+#### File Structure ####
+
+├── content
+│   ├── cache
+│   ├── config
+│   │   ├── template.yaml
+│   │   └── ...
+│   ├── data
+│   └── models
+├── build_model.py
+├── evaluate.py
+├── display_01_Extraction_accuracy_epoch.py
+├── display_02_accuracy.py
+├── display_03_confusion matrix.py.py
+├── nested_array_catcher.py
+├── prepare_data.py
+├── preprocess_data.py
+├── Readme.txt
+└── train.py
+
+
